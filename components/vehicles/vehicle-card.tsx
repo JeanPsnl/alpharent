@@ -10,7 +10,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
   return (
     <Link
       href={`/vehicules/${vehicle.id}`}
-      className="group bg-card border border-border rounded-lg overflow-hidden hover:border-primary/30 transition-all"
+      className="group bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-all shadow-sm hover:shadow-lg hover:shadow-black/10"
     >
       <div className="aspect-[4/3] overflow-hidden">
         <img
@@ -20,14 +20,19 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
         />
       </div>
       <div className="p-5 md:p-6">
-        <div className="flex items-center justify-between mb-2">
-          <p className="text-xs text-primary uppercase tracking-wider">{vehicle.brand}</p>
-          <span className="text-xs text-muted-foreground capitalize">{vehicle.category}</span>
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-[11px] text-primary uppercase tracking-[0.2em]">{vehicle.brand}</p>
+          <span className="text-[11px] text-muted-foreground capitalize">{vehicle.category}</span>
         </div>
-        <h3 className="text-lg text-foreground font-medium mb-1">{vehicle.name}</h3>
-        <p className="text-sm text-muted-foreground mb-4">
-          {vehicle.power} • {vehicle.transmission}
-        </p>
+        <h3 className="text-lg text-foreground font-semibold mb-3">{vehicle.name}</h3>
+        <div className="flex flex-wrap gap-2 mb-5">
+          <span className="text-xs text-muted-foreground border border-border/70 rounded-full px-3 py-1">
+            {vehicle.power}
+          </span>
+          <span className="text-xs text-muted-foreground border border-border/70 rounded-full px-3 py-1">
+            {vehicle.transmission}
+          </span>
+        </div>
 
         <div className="flex items-center justify-between pt-4 border-t border-border">
           <div>
