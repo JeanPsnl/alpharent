@@ -22,7 +22,6 @@ export function Hero() {
           loop
           playsInline
           className="w-full h-full object-cover"
-          poster="/black-audi-rs5-in-dark-parking-garage.jpg"
         >
           <source
             src="https://pub-e5b669319dd9424e8f48dd90e60bd93f.r2.dev/Rs5%20de%20retour%20..%20%F0%9F%A4%AB%20%23rs5%20%23audi.MP4"

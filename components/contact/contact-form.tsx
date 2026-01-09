@@ -7,14 +7,9 @@ import { Send, CheckCircle } from "lucide-react"
 
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsLoading(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsLoading(false)
     setIsSubmitted(true)
   }
 
@@ -121,17 +116,10 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={isLoading}
-        className="w-full px-6 py-4 bg-[#C9A227] text-[#050505] font-medium rounded-md hover:bg-[#D4AF37] transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+        className="w-full px-6 py-4 bg-[#C9A227] text-[#050505] font-medium rounded-md hover:bg-[#D4AF37] transition-colors flex items-center justify-center gap-2"
       >
-        {isLoading ? (
-          "Envoi en cours..."
-        ) : (
-          <>
-            Envoyer le message
-            <Send className="w-4 h-4" />
-          </>
-        )}
+        Envoyer le message
+        <Send className="w-4 h-4" />
       </button>
     </form>
   )
